@@ -1,0 +1,42 @@
+{
+  "name": "personal-verification-web",
+  "version": "1.0.0",
+  "description": "personal verification system",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rmdir dist /s /q",
+    "build": "tsc && node -r dotenv/config  dist/index.js dotenv_config_path=.env.develop ",
+    "start": "nodemon -r dotenv/config --watch 'src/**/*' --exec ts-node src/index.ts dotenv_config_path=.env.develop",
+    "test": "jest",
+    "lint": "npm run lint"
+  },
+  "author": "Deval Technologies",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.12.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^9.0.1",
+    "promise-mysql": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.0.13",
+    "@types/supertest": "^2.0.9",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  }
+}
